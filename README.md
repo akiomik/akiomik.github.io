@@ -1,5 +1,3 @@
-# Akiomi Kamakura
-
 Software developer
 
 - [github](https://github.com/akiomik)
