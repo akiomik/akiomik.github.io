@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "tailwindcss -i main.css -o dist/output.css --watch",
-    "build": "tailwindcss -i main.css -o dist/output.css --watch"
+    "dev": "tailwindcss -i main.css -o dist/output.css --minify --watch",
+    "build": "tailwindcss -i main.css -o dist/output.css --minify"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.7"
