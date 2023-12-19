@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Akiomi Kamakura - 0m1.io",
+  "name": "0m1.io",
   "short_name": "0m1.io",
   "start_url": ".",
   "display": "standalone",
