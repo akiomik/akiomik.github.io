@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Akiomi Kamakura - 0m1.io",
+  "short_name": "0m1.io",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#e5e7eb",
+  "theme_color": "#000",
+  "description": "Akiomi Kamakura's profile",
+  "icons": [
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/assets/favicon.png",
+      "type": "image/png",
+      "sizes": "360x360"
+    }
+  ]
+}
