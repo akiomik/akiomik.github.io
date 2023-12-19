@@ -11,12 +11,20 @@
     {
       "src": "/assets/apple-touch-icon.png",
       "type": "image/png",
-      "sizes": "180x180"
+      "sizes": "180x180",
+      "purpose": "maskable any"
     },
     {
       "src": "/assets/favicon.png",
       "type": "image/png",
-      "sizes": "360x360"
+      "sizes": "360x360",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "maskable any"
     }
   ]
 }
