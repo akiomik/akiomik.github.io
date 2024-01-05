@@ -87,7 +87,7 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist/*
-!dist/main.min.css
+!dist/*.min.css
 
 # Gatsby files
 .cache/
