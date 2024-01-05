@@ -44,6 +44,104 @@
         }
       }
     </script>
+    <script>
+      const repos = [{
+        lang: 'go',
+        name: 'vimeo-dl',
+        url: 'https://github.com/akiomik/vimeo-dl',
+        desc: 'A cli tool to download private videos on vimeo.',
+      }, {
+        lang: 'go',
+        name: 'xk6-nostr',
+        url: 'https://github.com/akiomik/xk6-nostr',
+        desc: 'An xk6 extension for Nostr.',
+      }, {
+        lang: 'go',
+        name: 'squawks',
+        url: 'https://github.com/akiomik/squawks',
+        desc: 'A cli tool to get old tweets as csv.',
+      }, {
+        lang: 'go',
+        name: 'shiomi',
+        url: 'https://github.com/akiomik/shiomi',
+        desc: 'An oscilloscope-like audio waveform GIF animation generator.',
+      }, {
+        lang: 'rust',
+        name: 'nostui',
+        url: 'https://github.com/akiomik/nostui',
+        desc: 'A TUI client for Nostr.',
+      }, {
+        lang: 'rust',
+        name: 'git-branch-status',
+        url: 'https://github.com/akiomik/git-branch-status',
+        desc: 'A command line tool for displaying git branch colored by status.',
+      }, {
+        lang: 'rust',
+        name: 'vibrato-dict-ipa-neologd',
+        url: 'https://github.com/akiomik/vibrato-dict-ipa-neologd',
+        desc: 'A compiled mecab-ipadic-neologd dictionary for vibrato.',
+      }, {
+        lang: 'typescript',
+        name: 'nosli',
+        url: 'https://github.com/akiomik/nosli',
+        desc: 'An app for creating curated list of posts on Nostr.',
+      }, {
+        lang: 'typescript',
+        name: 'nosvelte',
+        url: 'https://github.com/akiomik/nosvelte',
+        desc: 'An experimental Svelte library for building Nostr apps easily.',
+      }, {
+        lang: 'typescript',
+        name: 'nosey',
+        url: 'https://github.com/akiomik/nosey',
+        desc: 'A search app for Nostr.',
+      }, {
+        lang: 'typescript',
+        name: 'nostrends',
+        url: 'https://github.com/akiomik/nostrends',
+        desc: 'A trending site for Nostr.',
+      }, {
+        lang: 'scala',
+        name: 'cats-nio-file',
+        url: 'https://github.com/akiomik/cats-nio-file',
+        desc: 'A thin scala wrapper for Java NIO.2, built on cats-effect.',
+      }, {
+        lang: 'scala',
+        name: 'stanford-corenlp-server',
+        url: 'https://github.com/akiomik/stanford-corenlp-server',
+        desc: 'Scala JSON-RPC server for Stanford CoreNLP.',
+      }, {
+        lang: 'scala',
+        name: 'scalatest-csv-table',
+        url: 'https://github.com/akiomik/scalatest-csv-table',
+        desc: 'A scalatest helper for table driven testing with csv.',
+      }, {
+        lang: 'kotlin',
+        name: 'seiun',
+        url: 'https://github.com/akiomik/seiun',
+        desc: 'An experimental ATP/Bluesky client app for Android.',
+      }, {
+        lang: 'python',
+        name: 'pilgram',
+        url: 'https://github.com/akiomik/pilgram',
+        desc: 'A python library for instagram filters.',
+      }];
+
+      const filterReposByLang = (lang) => {
+        const filtered = repos.filter((repo) => repo.lang === lang.toLowerCase());
+        const html = filtered.map((repo) => {
+          return `
+            <li>
+              <p>
+                <a href="https://github.com/akiomik/vimeo-dl" target="_blank" rel="noopener" class="underline notranslate">${repo.name}</a>
+                - ${repo.desc}
+              </p>
+            </li>
+          `;
+        }).join('\n');
+        document.querySelector('.js-oss').innerHTML = html;
+      };
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3X62G6JWKZ"></script>
     <script>
@@ -120,11 +218,31 @@
       <section class="flex flex-col gap-8">
         <section class="flex flex-col gap-3">
           <h2 class="text-lg">OSS</h2>
-          <ul class="flex flex-col gap-2">
+          <ul class="flex flex-row flex-wrap gap-y-2">
+            <li>
+              <button onclick="filterReposByLang('go')" class="bg-sky-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded border border-stone-500">Go</a>
+            </li>
+            <li>
+              <button onclick="filterReposByLang('rust')" class="bg-orange-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded border border-stone-500">Rust</a>
+            </li>
+            <li>
+              <button onclick="filterReposByLang('typescript')" class="bg-blue-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded border border-stone-500">TypeScript</button>
+            </li>
+            <li>
+              <button onclick="filterReposByLang('scala')" class="bg-rose-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded border border-stone-500">Scala</button>
+            </li>
+            <li>
+              <button onclick="filterReposByLang('kotlin')" class="bg-violet-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded border border-stone-500">Kotlin</button>
+            </li>
+            <li>
+              <button onclick="filterReposByLang('python')" class="bg-indigo-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded border border-stone-500">Python</button>
+            </li>
+          </ul>
+          <ul class="flex flex-col gap-2 md:w-[30rem] h-32 overflow-y-scroll js-oss">
             <li>
               <p>
                 <a href="https://github.com/akiomik/vimeo-dl" target="_blank" rel="noopener" class="underline notranslate">vimeo-dl</a>
-                - A cli tool to download private videos on vimeo. Written in golang.
+                - A cli tool to download private videos on vimeo.
               </p>
             </li>
             <li>
@@ -137,6 +255,12 @@
               <p>
                 <a href="https://github.com/akiomik/hubot-chatwork" target="_blank" rel="noopener" class="underline notranslate">hubot-chatwork</a>
                 - A hubot adapter for chatwork.
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="https://github.com/akiomik/seiun" target="_blank" rel="noopener" class="underline notranslate">seiun</a>
+                - An experimental ATP/Bluesky client app for Android.
               </p>
             </li>
           </ul>
@@ -155,13 +279,13 @@
             <li>
               <p>
                 <a href="https://nosey.vercel.app" target="_blank" rel="noopener" class="underline notranslate">Nosey</a>
-                - A Nostr searcher.
+                - A search app for Nostr.
               </p>
             </li>
             <li>
               <p>
                 <a href="https://nosli.vercel.app" target="_blank" rel="noopener" class="underline notranslate">Nosli</a>
-                - A curated list of posts on Nostr.
+                - An app for curated list of posts on Nostr.
               </p>
             </li>
           </ul>
